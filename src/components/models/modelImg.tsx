@@ -11,6 +11,7 @@ export const ModelImg = component$<ModelProps>((props) => {
     track(() => props.store.run);
     track(() => props.store.variable);
 
+    //NB:  To test this, copy the two PNG images from the `public` folder into the `/tmp` directory on your computer.
     const url = `/tmp/${props.store.model}-${props.store.datarun}-${props.store.level}-${props.store.run}-${props.store.variable}.png`
     const data = await serverImg(url)
     console.debug("DBG url",url)
