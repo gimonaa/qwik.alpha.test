@@ -1,5 +1,5 @@
-import { component$, Slot } from "@builder.io/qwik";
-import { server$, type RequestHandler } from "@builder.io/qwik-city";
+import { component$, Slot } from "@qwik.dev/core";
+import { server$, type RequestHandler } from "@qwik.dev/router";
 import fs from "node:fs/promises";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
@@ -12,6 +12,20 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
     maxAge: 5,
   });
 };
+
+export const serverImg = server$( async function(url:string) {
+  try {
+    console.log(`loading ${url}`)
+    const data = await fs.readFile(url)
+    const base64Image =  Buffer.from(data).toString('base64');
+    const base64ImageStr = `data:image/png;base64,${base64Image}`;
+    console.log(`loaded ${url}`)
+    return base64ImageStr  
+  } catch(err) {  
+    console.error(err)
+    return null
+  }
+}) 
 
 export const serverPlainText = server$(
   async function(url:string) {

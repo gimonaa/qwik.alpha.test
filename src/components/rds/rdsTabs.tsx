@@ -1,4 +1,4 @@
-import { component$,  Resource,  useResource$,  type Signal } from '@builder.io/qwik';
+import { component$,  Resource,  useResource$,  type Signal } from '@qwik.dev/core';
 import { Tabs } from '@qwik-ui/headless';
 import moment from 'moment';
 import { serverPlainText } from  '~/routes/(authenticated)/layout';

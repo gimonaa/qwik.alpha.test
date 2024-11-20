@@ -1,4 +1,4 @@
-import { component$, useSignal } from '@builder.io/qwik';
+import { component$, useSignal } from '@qwik.dev/core';
 import moment from 'moment';
 // import { Date } from '~/components/ui/date';
 import { RdsTabs } from '~/components/rds/rdsTabs';
