@@ -20,7 +20,7 @@ export const ModelImg = component$<ModelProps>((props) => {
   return (
     <>
         <Resource value={imgLoc} 
-        //   onPending={() => <p >Loading..</p>}
+          // onPending={() => <p >Loading..</p>}
           onRejected={() => <p>error ...</p>}
           onResolved={(res) => 
           ( res && <>

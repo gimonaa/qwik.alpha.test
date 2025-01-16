@@ -1,6 +1,6 @@
-import { component$, Resource, useResource$, useStore} from '@qwik.dev/core';
-import { Image } from '~/components/ui/image';
-import { serverImg } from '../layout';
+import { component$, useStore} from '@qwik.dev/core';
+// import { Image } from '~/components/ui/image';
+// import { serverImg } from '../layout';
 import { ModelImg } from '~/components/models/modelImg';
 
 export default component$(() => {
