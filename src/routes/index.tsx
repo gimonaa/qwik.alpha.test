@@ -16,6 +16,7 @@ export default component$(() => {
   <br/>
 In the modelImg component, the onPending Resource comment does not work. If I remove the comment, it works.
         <br />
+In the Console debug you can see the url used to load the image.
         
       </div>
     </>
