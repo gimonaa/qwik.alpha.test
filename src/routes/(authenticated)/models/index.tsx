@@ -19,8 +19,12 @@ export default component$(() => {
 
         <button
             class="m-3 p-3 bg-slate-200 border-2 border-black"
+            onMouseOver$={() => {
+              storeModel.model = 'GFS';
+            }}
             onClick$={() => {
-            storeModel.model = 'GFS';
+              storeModel.model = 'GFS';
+            
         }}
         >
           button GFS
@@ -28,6 +32,9 @@ export default component$(() => {
 
         <button
             class="m-3 p-3 bg-slate-200 border-2 border-black"
+            onMouseOver$={() => {
+              storeModel.model = 'ECMWF';
+            }}
             onClick$={() => {
             storeModel.model = 'ECMWF';
         }}

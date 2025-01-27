@@ -28,8 +28,8 @@
   },
   "devDependencies": {
     "@qwik-ui/headless": "^0.6.4",
-    "@qwik.dev/core": "^2.0.0-alpha.5",
-    "@qwik.dev/router": "^2.0.0-alpha.5",
+    "@qwik.dev/core": "^2.0.0-alpha.6",
+    "@qwik.dev/router": "^2.0.0-alpha.6",
     "@types/eslint": "8.56.10",
     "@types/node": "20.14.11",
     "@typescript-eslint/eslint-plugin": "7.16.1",
