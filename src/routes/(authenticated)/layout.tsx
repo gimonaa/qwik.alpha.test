@@ -13,19 +13,19 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
   });
 };
 
-export const serverImg = server$( async function(url:string) {
-  try {
-    console.log(`loading ${url}`)
-    const data = await fs.readFile(url)
-    const base64Image =  Buffer.from(data).toString('base64');
-    const base64ImageStr = `data:image/png;base64,${base64Image}`;
-    console.log(`loaded ${url}`)
-    return base64ImageStr  
-  } catch(err) {  
-    console.error(err)
-    return null
-  }
-}) 
+// export const serverImg = server$( async function(url:string) {
+//   try {
+//     console.log(`loading ${url}`)
+//     const data = await fs.readFile(url)
+//     const base64Image =  Buffer.from(data).toString('base64');
+//     const base64ImageStr = `data:image/png;base64,${base64Image}`;
+//     console.log(`loaded ${url}`)
+//     return base64ImageStr  
+//   } catch(err) {  
+//     console.error(err)
+//     return null
+//   }
+// }) 
 
 export const serverPlainText = server$(
   async function(url:string) {

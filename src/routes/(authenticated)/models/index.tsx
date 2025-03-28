@@ -1,7 +1,7 @@
 import { component$, useStore} from '@qwik.dev/core';
 // import { Image } from '~/components/ui/image';
 // import { serverImg } from '../layout';
-import { ModelImg } from '~/components/models/modelImg';
+// import { ModelImg } from '~/components/models/modelImg';
 
 export default component$(() => {
 
@@ -42,7 +42,7 @@ export default component$(() => {
           button ECMWF
         </button>
         
-        <ModelImg store={storeModel}></ModelImg>
+        {/* <ModelImg store={storeModel}></ModelImg> */}
 
     </div>
   );
