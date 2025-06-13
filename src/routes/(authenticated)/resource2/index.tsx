@@ -1,10 +1,9 @@
-import { component$, Resource, useResource$, useSignal } from '@qwik.dev/core';
-import { server$ } from '@qwik.dev/router';
-import moment from 'moment';
-import { Test } from '~/components/ui/test';
+import { component$, Resource, useResource$ } from '@qwik.dev/core';
+import {  server$ } from '@qwik.dev/router';
 
 
 export const serverRes = server$(async () => {
+
   const data = [
     {
       id: 1,
@@ -23,26 +22,17 @@ export const serverRes = server$(async () => {
 
 export default component$(() => {
 
-  const ymdSig = useSignal(moment().utc().format("YYYYMMDD"));
-
-  const resource = useResource$(async ({ track, cleanup }) => {
-    track(() => ymdSig.value);
+  const resource = useResource$(async () => {
     const dataRes = await serverRes();
-
-    const controller = new AbortController();   
-    cleanup(() => controller.abort()); 
     return dataRes
   });
 
   return (
-    <>
+    <div>
 
-      <h1 class="text-xl p-4">useResource 1</h1>
+ 
 
-      <div>
-        <p>ymd: {ymdSig.value}</p>
-      </div>
-      change date:<input class="p-1 border " type="text" bind:value={ymdSig}  />
+      <h1 class="text-2xl p-3">useResource 2</h1>
 
       <Resource 
         value={resource}
@@ -54,12 +44,11 @@ export default component$(() => {
               <p>{val.id}</p>
               <p>{val.name}</p>
               <p>{val.age}</p>
-              <Test date={ymdSig}></Test>
             </div>
           )
         }}
       />
 
-    </>
+    </div>
   );
 });
