@@ -1,6 +1,6 @@
 import { component$, Slot } from "@qwik.dev/core";
 import {  server$, type RequestHandler } from "@qwik.dev/router";
-import { Navbar } from "~/components/navbar/navbar";
+// import { Navbar } from "~/components/navbar/navbar";
 import fs from "fs/promises";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
@@ -34,11 +34,23 @@ export default component$(() => {
   return (
     <>
       <main>
-        <Navbar>
           <Slot />
-        </Navbar>
       </main>
     </>
   )
 
 });
+
+// export default component$(() => {
+
+//   return (
+//     <>
+//       <main>
+//         <Navbar>
+//           <Slot />
+//         </Navbar>
+//       </main>
+//     </>
+//   )
+
+// });
