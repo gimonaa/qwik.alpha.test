@@ -136,12 +136,16 @@ This ensures that when the signal changes, the server function is called, and th
 export const LeafletMap = component$<MapProps>(
   ({ location, markers, group }) => {
     const mapContainerSig = useSignal<L.Map>();
+
+    console.log('LeafletMap', location, markers, group);
  
     // eslint-disable-next-line qwik/no-use-visible-task
     useVisibleTask$(async ({ track }) => {
       track(location);
       group && track(group);
  
+      console.log('LeafletMap useVisibleTask', location, markers, group);
+
       if (mapContainerSig.value) {
         mapContainerSig.value.remove();
       }
